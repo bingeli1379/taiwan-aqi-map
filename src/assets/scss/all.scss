@@ -78,10 +78,11 @@
     border-radius: 50px;
     background-color: #fff;
     cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
   }
 
   &-table {
-    display: none;
     position: absolute;
     left: 25px;
     bottom: 25px;
@@ -118,9 +119,8 @@
       background-color: rgba(#3d3d3d, 0.9);
     }
   }
+}
 
-  &-sup:hover &-table,
-  &-sup:active &-table {
-    display: table;
-  }
+.d-none {
+  display: none;
 }

@@ -13,7 +13,7 @@
         </select>
       </div>
     </div>
-    <div class="map">
+    <div class="map" @click="supIsHide = true">
       <l-map ref="myMap" :zoom="zoom" :center="center" :options="options">
         <l-tile-layer :url="url" :attribution="attribution" />
 
@@ -47,9 +47,13 @@
         </l-marker>
       </l-map>
 
-      <div class="map-sup">
+      <div
+        class="map-sup"
+        unselectable="on"
+        @click.stop="supIsHide = !supIsHide"
+      >
         ?
-        <table class="map-table">
+        <table class="map-table " :class="{ 'd-none': supIsHide }">
           <thead>
             <tr class="map-table-title">
               <th>AQI指數</th>
@@ -126,7 +130,9 @@ export default {
 
       city: "",
       cityList: [],
-      aqiData: []
+      aqiData: [],
+
+      supIsHide: true
     };
   },
   computed: {
