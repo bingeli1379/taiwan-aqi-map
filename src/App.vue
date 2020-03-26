@@ -25,8 +25,8 @@
 
         <l-marker
           :lat-lng="[item.Latitude, item.Longitude]"
-          v-for="item in filterCityData"
-          :key="item.Latitude"
+          v-for="(item, i) in filterCityData"
+          :key="i"
         >
           <l-icon
             :icon-url="icon.type[item.iconColor]"
@@ -38,7 +38,11 @@
           />
 
           <l-popup class="map-content">
-            {{ item.SiteName }}
+            <p>{{ item.SiteName }}</p>
+
+            空氣品質: {{ item.AQI }}
+
+            <p>{{ item.PublishTime }}</p>
           </l-popup>
         </l-marker>
       </l-map>
@@ -67,7 +71,7 @@
             </tr>
             <tr class="map-table-red">
               <td>151~200</td>
-              <td>不健康</td>
+              <td>對所有族群不健康</td>
             </tr>
             <tr class="map-table-violet">
               <td>201~300</td>
