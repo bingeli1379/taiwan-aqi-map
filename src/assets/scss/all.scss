@@ -1,0 +1,122 @@
+@import "./helper/reset.scss";
+
+#app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "微軟正黑體";
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: rgba(0, 0, 0, 0.9);
+  background: #f8f9fa;
+  box-shadow: 2px 0px 5px 5px rgba(0, 0, 0, 0.2);
+  z-index: 500;
+  padding: 10px;
+
+  @media (max-width: 575.98px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &-select {
+    display: flex;
+    justify-content: flex-start;
+    flex-grow: 1;
+    align-items: center;
+
+    select {
+      font-family: "微軟正黑體";
+      font-size: 18px;
+      border-radius: 5px;
+      border: 1px solid #aaa;
+      padding: 0 5px;
+      margin: 0 10px;
+    }
+
+    @media (max-width: 575.98px) {
+      justify-content: center;
+    }
+  }
+  h1 {
+    font-weight: bold;
+    font-size: 22px;
+    margin-right: 20px;
+
+    @media (max-width: 575.98px) {
+      margin-bottom: 10px;
+      margin-right: 0;
+    }
+  }
+}
+
+.map {
+  height: 100%;
+
+  &-content {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  &-sup {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+
+  &-table {
+    display: none;
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+    border-collapse: collapse;
+    width: 230px;
+    color: #fff;
+    background-color: #fff;
+    border-radius: 10px;
+    th,
+    td {
+      text-align: center;
+      padding: 5px 0;
+    }
+
+    &-title {
+      color: #333;
+    }
+    &-green {
+      background-color: rgba(#2aad27, 0.9);
+    }
+    &-yellow {
+      background-color: rgba(#cac428, 0.9);
+    }
+    &-orange {
+      background-color: rgba(#cb8427, 0.9);
+    }
+    &-red {
+      background-color: rgba(#cb2b3e, 0.9);
+    }
+    &-violet {
+      background-color: rgba(#9c2bcb, 0.9);
+    }
+    &-black {
+      background-color: rgba(#3d3d3d, 0.9);
+    }
+  }
+
+  &-sup:hover &-table {
+    display: table;
+  }
+}
