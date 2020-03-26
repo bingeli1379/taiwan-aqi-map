@@ -146,7 +146,6 @@ export default {
         "https://cors-anywhere.herokuapp.com/https://opendata.epa.gov.tw/webapi/api/rest/datastore/355000000I-000259?sort=SiteName&offset=0&limit=1000";
       this.axios.get(api).then(res => {
         this.aqiData = res.data.result.records;
-        console.log(this.aqiData);
         this.getCityList();
       });
     },

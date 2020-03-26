@@ -119,7 +119,8 @@
     }
   }
 
-  &-sup:hover &-table {
+  &-sup:hover &-table,
+  &-sup:active &-table {
     display: table;
   }
 }
